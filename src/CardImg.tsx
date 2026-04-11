@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import DisertImage from './image.jpg';
 
 export function CardImg() {
     return (
-        <StyleCardImg  alt = {"Not Drowing"}/>
+        <StyleCardImg src = {DisertImage} alt = {"Not Drowing"}/>
     )
 }
 const StyleCardImg = styled.img`

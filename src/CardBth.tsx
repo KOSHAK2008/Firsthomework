@@ -13,15 +13,13 @@ const StyledCardBtn = styled.button`
     padding: 4px 20px;
     border-radius: 5px;
     color: snow;
-    font-family: Inter;
     font-weight: 700;
     font-size: 10px;
     line-height: 20px;
-    letter-spacing: 0%;
+    letter-spacing: 0;
 
     &:active {
         border: 2px solid #4E71FE;
-        //border-color:E;
         background-color: #ffffff;
         color: #4E71FE;
     }
