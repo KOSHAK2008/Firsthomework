@@ -1,27 +1,41 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
-export function CardBth(props: any   ) {
+export function CardBth (props: StyleCardBrhPropsType) {
     return (
-        <StyledCardBtn>{props.title}</StyledCardBtn>
+    <StyledCardBth> {props.title}</StyledCardBth>
     )
 }
-const StyledCardBtn = styled.button`
+
+type StyleCardBrhPropsType = {
+    title?: string;
+    color?: string;
+    primary?: boolean;
+    outline?: boolean
+}
+
+const StyledCardBth = styled.button`
     border: none;
-    background-color: #4E71FE;
+     background-color: ${props => props.color || "#4E71FE"};
     width: 86px;
     height: 30px;
-    padding: 4px 20px;
+    padding: 4px 16px;
     border-radius: 5px;
     color: snow;
     font-weight: 700;
     font-size: 10px;
     line-height: 20px;
     letter-spacing: 0;
-
-    &:active {
-        border: 2px solid #4E71FE;
+    
+    ${props => props.outline && css<StyleCardBrhPropsType>`
+        border: 2px solid ${props.color || "#4E71FE"};
         background-color: #ffffff;
         color: #4E71FE;
-    }
+        `
+}
+    ${props => props.primary && css<StyleCardBrhPropsType>`
+        border: 2px solid ${props.color || "#ffffff"};
+        background-color: #4E71FE;
+        color: #ffffff;
+        `
+}
 `
-
