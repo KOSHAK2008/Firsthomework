@@ -1,27 +1,29 @@
 import styled, {css} from "styled-components";
+
 // import {CardBth} from "./CardBth";
 
-export function CardsBth () {
+export function CardsBth() {
     return (
         <StyledCardsBth>
-            <CardBth primary title ={"See more"}>See more</CardBth>
-            <CardBth outline title ={"Save"}>Save</CardBth>
+            <CardBth typeBth={"primary"} title={"See more"}>See more</CardBth>
+            <CardBth typeBth={"outline"} title={"Save"}>Save</CardBth>
         </StyledCardsBth>
     )
 }
+
 const StyledCardsBth = styled.div`
-    width: 184px;
-    height: 30px;
+    width: 85%;
+    height: 23%;
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: flex-start;
+    gap: 10%;
+
 `
 
 type StyleCardBrhPropsType = {
     title?: string;
     color?: string;
-    primary?: boolean;
-    outline?: boolean
+    typeBth?: "primary" | "outline";
 }
 
 const CardBth = styled.button<StyleCardBrhPropsType>`
@@ -29,7 +31,7 @@ const CardBth = styled.button<StyleCardBrhPropsType>`
     background-color: ${props => props.color || "#4E71FE"};
     width: 86px;
     height: 30px;
-    padding: 4px 16px;
+    //padding: 1% 6%;
     border-radius: 5px;
     color: snow;
     font-weight: 700;
@@ -37,16 +39,22 @@ const CardBth = styled.button<StyleCardBrhPropsType>`
     line-height: 20px;
     letter-spacing: 0;
 
-    ${props => props.outline && css<StyleCardBrhPropsType>`
-        border: 2px solid ${props => props.color || "#4E71FE"};
+    &:hover {
+        background-color: rgb(66 68 87);
+        border: none;
+        color: rgb(183 187 221);
+    }
+
+    ${props => props.typeBth === "outline" && css<StyleCardBrhPropsType>`
+        border: 2px solid ${props.color || "#4E71FE"};
         background-color: #ffffff;
         color: #4E71FE;
-        `
-}
-    ${props => props.primary && css<StyleCardBrhPropsType>`
-        border: 2px solid ${props => props.color || "#ffffff"};
+    `
+    }
+    ${props => props.typeBth === "primary" && css<StyleCardBrhPropsType>`
+        border: 2px solid ${props.color || "#ffffff"};
         background-color: #4E71FE;
         color: #ffffff;
-        `
-}
+    `
+    }
 `

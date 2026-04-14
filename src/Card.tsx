@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {CardMain} from "./CardMain";
 
 
-export function Card () {
+export function Card() {
     return (
         <StyleCard>
             <CardImg/>
@@ -12,10 +12,10 @@ export function Card () {
     )
 }
 
-const StyleCard = styled.div`
+const StyleCard = styled.article`
     width: 280px;
     height: 330px;
-    border: 1px solid #000000;
+    box-shadow: 0 0 5px #676767;
     border-radius: 15px;
     background: #FFFFFF;
     padding: 10px;
